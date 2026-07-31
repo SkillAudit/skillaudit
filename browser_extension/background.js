@@ -23,7 +23,7 @@ chrome.storage.onChanged.addListener((changes, area) => {
 });
 
 function log(...args) {
-  console.log("[SkillAudit][background]", ...args);
+  console.log("[SkillPortrait][background]", ...args);
 }
 
 function sanitizeSegment(value) {
@@ -134,7 +134,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
       downloadId
     });
   })().catch((error) => {
-    console.error("[SkillAudit][background]", error);
+    console.error("[SkillPortrait][background]", error);
     sendResponse({
       ok: false,
       error: error?.message || String(error)

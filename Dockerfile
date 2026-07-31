@@ -1,4 +1,4 @@
-# SkillAudit evaluation runtime image.
+# SkillPortrait evaluation runtime image.
 #
 # Build with the Harbor commit pinned at build time:
 #   docker build --build-arg HARBOR_SHA=<commit-sha> -t skillaudit-eval .

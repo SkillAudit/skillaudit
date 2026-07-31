@@ -1,38 +1,38 @@
-# SkillAudit — Evaluation Harness
+# SkillPortrait — Evaluation Harness
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20253170.svg)](https://doi.org/10.5281/zenodo.20253170)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21720913.svg)](https://doi.org/10.5281/zenodo.21720913)
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache--2.0-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 [![Dataset License: CDLA-Permissive-2.0](https://img.shields.io/badge/Dataset-CDLA--Permissive--2.0-green.svg)](https://cdla.dev/permissive-2-0/)
 
-**SkillAudit** is an evaluation framework for Anthropic-style `/skill` markdown packages
-consumed by LLM coding agents. Given a `SKILL.md` and its supporting files, SkillAudit
+**SkillPortrait** is an evaluation framework for Anthropic-style `/skill` markdown packages
+consumed by LLM coding agents. Given a `SKILL.md` and its supporting files, SkillPortrait
 generates utility and security probes, executes them inside an isolated Harbor
 sandbox, captures the full agent trajectory, and produces an LLM-judge verdict on
 two independent axes: **utility** (capability lift via `pass_rate_gain`) and
 **security** (exploitability under adversarial conditions).
 
-This repository is the open-source release of the SkillAudit evaluation
-framework, the companion to the arXiv preprint
-**"SkillAudit: From Task-First Evaluation to Skill-Centered Assessment"**.
+This repository is the open-source release of the SkillPortrait evaluation
+framework, the companion to the paper
+**"SkillPortrait: From Fixed-Suite Benchmarking to Skill-Centered Assessment"**.
 The companion landing page is at
 [`skillaudit.github.io`](https://skillaudit.github.io/).
 
 > [!NOTE]
-> **▶ 30-second demo** — see how SkillAudit evaluates a skill before you install it.
+> **▶ 30-second demo** — see how SkillPortrait evaluates a skill before you install it.
 > Watch on the landing page: [`skillaudit.github.io/#demo`](https://skillaudit.github.io/#demo).
 
 ---
 
 > **Open-source release.**
-> SkillAudit is maintained by the [SkillAudit](https://github.com/SkillAudit)
+> SkillPortrait is maintained in the [SkillAudit GitHub organization](https://github.com/SkillAudit)
 > open-source community. The evaluation framework lives at
 > [`SkillAudit/skillaudit`](https://github.com/SkillAudit/skillaudit) and its
 > dependency [`SkillAudit/harbor`](https://github.com/SkillAudit/harbor)
 > is an Apache-2.0 fork of [`laude-institute/harbor`](https://github.com/laude-institute/harbor)
-> with a single SkillAudit-specific patch (see [NOTICE](NOTICE)).
+> with a single SkillPortrait-specific patch (see [NOTICE](NOTICE)).
 >
 > **Dataset:** the evaluation traces and Croissant 1.0 + RAI/1.0 metadata are
-> published as a separate Zenodo record, DOI [`10.5281/zenodo.20253170`](https://doi.org/10.5281/zenodo.20253170).
+> published as a separate, fully public Zenodo record, DOI [`10.5281/zenodo.21720913`](https://doi.org/10.5281/zenodo.21720913).
 > License: **CDLA-Permissive-2.0**.
 
 ---
@@ -75,7 +75,7 @@ cp .env.example .env
 python -m skills_eval.task_judge.run_utility_judge --help
 ```
 
-The first install pulls the pinned SkillAudit Harbor fork from
+The first install pulls the pinned SkillPortrait Harbor fork from
 `git+https://github.com/SkillAudit/harbor.git@bce6a018f70418daefc5c4f9aedd14cd1c79b907` (see
 [`pyproject.toml`](pyproject.toml)). Harbor in turn provisions the Docker images
 that run individual agent trials, so a working Docker daemon is required for
@@ -85,7 +85,7 @@ that run individual agent trials, so a working Docker daemon is required for
 
 ## Architecture
 
-SkillAudit is a four-stage pipeline. Each stage is independently runnable, persists
+SkillPortrait is a four-stage pipeline. Each stage is independently runnable, persists
 its artifacts to disk, and resumes idempotently from where it left off.
 
 ```
@@ -145,7 +145,7 @@ even when a corpus has thousands of historic rollouts.
 ## Repository layout
 
 ```
-SkillAudit/
+SkillPortrait/
 ├── README.md                     ← this file
 ├── LICENSE                       ← Apache-2.0
 ├── NOTICE                        ← attribution for the Harbor fork
@@ -444,7 +444,7 @@ in that file for the exact penalty arithmetic.
 
 > **Note on exact reproducibility.** The experiments reported in the paper
 > were originally executed against an unversioned internal snapshot of the
-> Harbor framework. For this public release, the single SkillAudit-specific
+> Harbor framework. For this public release, the single SkillPortrait-specific
 > patch (the `$CODEX_HOME/skills/` registration path) was ported forward to
 > the latest stable upstream tag `v0.6.5`. The patch
 > functionally preserves the agent's skill-injection behaviour, but Harbor
@@ -515,7 +515,7 @@ on rate limits and Docker capacity on the host.
 The smoke scripts also illustrate the agent contract for non-Claude models:
 `smoke_codex_run.py` runs the Codex agent on the OpenAI Responses API, and
 `smoke_opencode_run.py` runs the OpenCode agent on Anthropic. The single
-SkillAudit-specific patch on the vendored Harbor fork — registering Codex
+SkillPortrait-specific patch on the vendored Harbor fork — registering Codex
 skills under `$CODEX_HOME/skills/` instead of `$HOME/.agents/skills/` so they
 land inside Codex's sandbox-writable state directory — is what makes the
 "with-skill" arm of the Codex evaluation work.
@@ -526,7 +526,7 @@ land inside Codex's sandbox-writable state directory — is what makes the
 
 The evaluation artifacts ship inside this repository under
 [`docs/artifacts/`](docs/artifacts/). They cover the **evaluation outcomes**
-for the 227-skill × 8-run sweep reported in the paper — per-skill judge
+for the 226-skill evaluation sweep reported in the paper — per-skill judge
 verdicts, capability-level summaries, the aggregate CSV, the run /
 category index, and SHA-256 checksums for integrity verification. The
 search-first browser UI is mounted at
@@ -553,7 +553,7 @@ per rollout) but are not required to assess the paper's claims.
 
 ## Companion browser extension
 
-The paper describes a browser extension that surfaces SkillAudit results
+The paper describes a browser extension that surfaces SkillPortrait results
 at the point where a developer is browsing skill marketplaces — turning
 the "should I install this skill?" question into a one-click lookup.
 
@@ -569,7 +569,7 @@ server is required.
 #    chrome://extensions  →  toggle Developer mode  →  Load unpacked
 #    Select the browser_extension/ directory in this repo.
 
-# 2. Pin "SkillAudit — Browser Extension" to the toolbar and open any
+# 2. Pin "SkillPortrait — Browser Extension" to the toolbar and open any
 #    supported page (github.com/<owner>/<repo> with a SKILL.md, or one of
 #    clawhub.ai / skills.sh / skillsmp.com / ai-skills.io).
 ```
@@ -672,11 +672,11 @@ explicit when comparing against contemporary skill benchmarks.
 This work is licensed under the Apache License 2.0; see [`LICENSE`](LICENSE).
 
 The framework depends on the Harbor agent orchestrator, vendored as a
-SkillAudit fork at
+SkillPortrait fork at
 [`SkillAudit/harbor`](https://github.com/SkillAudit/harbor).
 Harbor is itself Apache-2.0 and the fork preserves the upstream `LICENSE`
 and `NOTICE`. The fork is based on upstream tag `v0.6.5` plus a single
-SkillAudit-specific commit on the `skillaudit` branch that changes the Codex
+SkillPortrait-specific commit on the `skillaudit` branch that changes the Codex
 skill-registration path from `$HOME/.agents/skills/` to `$CODEX_HOME/skills/`.
 Attribution and modification notices in this repository's [`NOTICE`](NOTICE)
 file follow the upstream requirements.
@@ -693,8 +693,7 @@ A `CITATION.cff` entry is included for tooling that consumes it.
 Until the arXiv preprint is announced, please cite the work as:
 
 ```
-SkillAudit: From Task-First Evaluation to Skill-Centered Assessment.
-SkillAudit Contributors. 2026.
-arXiv preprint (forthcoming). Companion dataset: Zenodo,
-https://doi.org/10.5281/zenodo.20253170
+SkillPortrait: From Fixed-Suite Benchmarking to Skill-Centered Assessment.
+Anonymous Authors. 2026.
+Companion dataset: Zenodo, https://doi.org/10.5281/zenodo.21720913
 ```

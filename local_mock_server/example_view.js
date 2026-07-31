@@ -175,7 +175,7 @@ function getVisibleExamples() {
 
 function renderOverview(dashboard) {
   const root = dashboard?.root || {};
-  document.title = `SkillAudit - ${root.nExamples || 0} Skills`;
+  document.title = `SkillPortrait - ${root.nExamples || 0} Skills`;
 }
 
 // ---------- Utility / Cost / Safety derivations ----------

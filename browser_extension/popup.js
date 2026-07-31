@@ -190,7 +190,7 @@ function bindInspect() {
       return;
     }
     openTab(url);
-    showToast("Opening — SkillAudit panel will load on the page.");
+    showToast("Opening — SkillPortrait panel will load on the page.");
   });
 
   input.addEventListener("keydown", (ev) => {

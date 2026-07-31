@@ -402,7 +402,7 @@ def render_lookup_html(entries: List[Dict[str, Any]]) -> str:
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>SkillAudit — lookup index ({total} entries)</title>
+  <title>SkillPortrait — lookup index ({total} entries)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="robots" content="noindex">
   <style>
@@ -428,7 +428,7 @@ def render_lookup_html(entries: List[Dict[str, Any]]) -> str:
   </style>
 </head>
 <body>
-  <h1>SkillAudit lookup index</h1>
+  <h1>SkillPortrait lookup index</h1>
   <p class="lede">
     {total} owner/repo entries · {skills} skills aggregated.
     Each row links to the per-repo <code>/lookup/&lt;owner&gt;__&lt;repo&gt;.json</code>

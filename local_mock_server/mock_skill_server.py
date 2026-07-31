@@ -440,7 +440,7 @@ def download_zip_to_temp(download_url: str, slug: str, timeout_seconds: int) -> 
 
     request = urllib.request.Request(
         download_url,
-        headers={"User-Agent": "SkillAuditLocalServer/0.2"},
+        headers={"User-Agent": "SkillPortraitLocalServer/0.2"},
         method="GET",
     )
 
@@ -1440,7 +1440,7 @@ def read_static_asset(filename: str) -> bytes:
 
 
 class RequestHandler(BaseHTTPRequestHandler):
-    server_version = "SkillAuditMock/0.2"
+    server_version = "SkillPortraitMock/0.2"
 
     def log_message(self, format: str, *args: object) -> None:
         log(self.address_string(), "-", format % args)
@@ -1663,7 +1663,7 @@ class RequestHandler(BaseHTTPRequestHandler):
 
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Local mock server for the SkillAudit Chrome extension.")
+    parser = argparse.ArgumentParser(description="Local mock server for the SkillPortrait Chrome extension.")
     parser.add_argument("--host", default=DEFAULT_HOST, help=f"Bind host. Default: {DEFAULT_HOST}")
     parser.add_argument("--port", type=int, default=DEFAULT_PORT, help=f"Bind port. Default: {DEFAULT_PORT}")
     parser.add_argument(

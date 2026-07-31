@@ -1,8 +1,8 @@
 [project]
 name = "skillaudit-eval"
 version = "0.1.0"
-description = "SkillAudit — evaluation framework for agent skill packages (utility + security)"
-authors = [{ name = "SkillAudit Contributors" }]
+description = "SkillPortrait — evaluation framework for agent skill packages (utility + security)"
+authors = [{ name = "SkillPortrait Contributors" }]
 license = { text = "Apache-2.0" }
 readme = "README.md"
 requires-python = ">=3.12"

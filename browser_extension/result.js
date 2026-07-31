@@ -1,6 +1,6 @@
-// SkillAudit — audit report page.
-// SkillAudit Engine is referenced where it adds technical credibility
-// (engine version, sandbox name, run id), but the user-facing brand is SkillAudit.
+// SkillPortrait — evaluation report page.
+// SkillPortrait Engine is referenced where it adds technical credibility
+// (engine version, sandbox name, run id), and SkillPortrait is the user-facing brand.
 
 const JOB_PREFIX = "job:";
 // Public artifacts mirror works zero-config for lookups. Live /evaluate
@@ -66,7 +66,7 @@ async function getJob(jobId) {
 }
 
 function fillMeta(job) {
-  el("page-title").textContent = job.skillName || "SkillAudit skill";
+  el("page-title").textContent = job.skillName || "SkillPortrait skill";
   el("page-subtitle").textContent = job.description ||
     "Inspecting agent skill: pulling bundle, running paired benchmark, scoring safety + cost.";
   el("meta-owner").textContent = job.owner || "—";
@@ -661,7 +661,7 @@ function renderResult(job, data, opts = {}) {
     isOverride,
     isOverride ? "Paper benchmark." : null,
     isOverride
-      ? "Pinned from the SkillAudit overrides corpus — re-run with the local engine for fresh numbers."
+      ? "Pinned from the SkillPortrait overrides corpus — re-run with the local engine for fresh numbers."
       : null
   );
 
@@ -799,7 +799,7 @@ function renderResult(job, data, opts = {}) {
 function normalizeServerError(error, job) {
   const message = error?.message || String(error);
   if (/Failed to fetch/i.test(message) || /NetworkError/i.test(message)) {
-    return `Could not reach the local SkillAudit engine on ${serverBaseUrl(job)}. Start mock_skill_server.py first.`;
+    return `Could not reach the local SkillPortrait engine on ${serverBaseUrl(job)}. Start mock_skill_server.py first.`;
   }
   return message;
 }
@@ -811,7 +811,7 @@ async function evaluate(job) {
   try {
     setStatus(
       "Inspecting",
-      "Contacting the local SkillAudit engine. It reads the skill bundle from your Downloads folder and runs the audit pipeline.",
+      "Contacting the local SkillPortrait engine. It reads the skill bundle from your Downloads folder and runs the evaluation pipeline.",
       "working"
     );
 
@@ -901,7 +901,7 @@ async function main() {
   try {
     await evaluate(job);
   } catch (error) {
-    console.error("[SkillAudit][result]", error);
+    console.error("[SkillPortrait][result]", error);
     renderEngineRequired(job, normalizeServerError(error, job));
   }
 
@@ -965,6 +965,6 @@ function bindButtons(job, jobId) {
 }
 
 main().catch((error) => {
-  console.error("[SkillAudit][result][fatal]", error);
+  console.error("[SkillPortrait][result][fatal]", error);
   setStatus("Fatal error", normalizeServerError(error), "error");
 });

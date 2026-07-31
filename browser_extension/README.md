@@ -1,19 +1,19 @@
-# SkillAudit
+# SkillPortrait
 
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache--2.0-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 [![Manifest V3](https://img.shields.io/badge/Manifest-V3-success.svg)](https://developer.chrome.com/docs/extensions/mv3/intro/)
-[![Companion paper](https://img.shields.io/badge/paper-SkillAudit-blue.svg)](https://skillaudit.github.io/paper/)
+[![Public dataset](https://img.shields.io/badge/dataset-Zenodo-blue.svg)](https://doi.org/10.5281/zenodo.21720913)
 
-A Chromium browser extension that surfaces **SkillAudit** evaluation results — utility
+A Chromium browser extension that surfaces **SkillPortrait** evaluation results — utility
 lift, safety findings, and resource cost — directly on GitHub repositories and the
 major skill marketplaces. The extension is the discovery-time surface for the
-[SkillAudit evaluation framework](../README.md): it turns the "should I install this
-skill?" question into a one-click lookup against a SkillAudit report.
+[SkillPortrait evaluation framework](../README.md): it turns the "should I install this
+skill?" question into a one-click lookup against a SkillPortrait report.
 
 > The paper introduces this surface as a *"lightweight browser extension for
-> skill-hosting platforms ... that turns SkillAudit from an offline evaluation
+> skill-hosting platforms ... that turns SkillPortrait from an offline evaluation
 > pipeline into a discovery-time decision aid."*
-> ([SkillAudit §2.7](https://skillaudit.github.io/paper/))
+> ([SkillPortrait project page](https://skillaudit.github.io/))
 
 ---
 
@@ -45,10 +45,10 @@ in-page panel.
 
 <p align="center">
   <img src="screenshots/03_audit_report.png"
-       alt="Audit report — verdict ring, three SkillAudit axes, paper-backed benchmark counts"
+       alt="Audit report — verdict ring, three SkillPortrait axes, paper-backed benchmark counts"
        width="820"><br>
   <em>3. Audit report — verdict ring (here: <strong>Risky</strong>, score 36),
-  the three SkillAudit axes (<code>pass_rate_gain</code> / safety score / cost
+  the three SkillPortrait axes (<code>pass_rate_gain</code> / safety score / cost
   overhead), paper-backed benchmark counts, and pinned static- and
   runtime-scan findings.</em>
 </p>
@@ -78,7 +78,7 @@ When you visit a supported page that hosts a `SKILL.md` package, the extension:
 1. **Detects** the candidate skill by parsing the URL plus the rendered DOM (the
    GitHub repo header for `github.com/<owner>/<repo>`, or the marketplace's own
    route for `clawhub.ai`, `skills.sh`, `skillsmp.com`, `ai-skills.io`).
-2. **Looks up** a SkillAudit report at
+2. **Looks up** a SkillPortrait report at
    `GET <backend>/lookup/<owner>__<repo>.json` (or `<owner>__<slug>.json`
    on marketplace pages where the URL uses a slug instead of a repo).
    The default backend is the public artifacts mirror at
@@ -165,7 +165,7 @@ unpacked extension:
    `arc://extensions`) in a Chromium-based browser.
 3. Toggle **Developer mode** in the top-right corner.
 4. Click **Load unpacked** and select the `browser_extension/` directory.
-5. Pin the **SkillAudit** icon to the toolbar so the popup is
+5. Pin the **SkillPortrait** icon to the toolbar so the popup is
    one click away.
 
 The extension is built against Chrome Manifest V3 and has been smoke-tested on
@@ -216,9 +216,9 @@ The extension reads the backend URL from `chrome.storage.sync` under the key
 `https://skillaudit.github.io/skillaudit/artifacts/api`.
 
 To change it (e.g. you run the server on a different port, or you point the
-extension at a self-hosted SkillAudit deployment):
+extension at a self-hosted SkillPortrait deployment):
 
-1. Click the SkillAudit toolbar icon to open the popup.
+1. Click the SkillPortrait toolbar icon to open the popup.
 2. Scroll to **Advanced · Backend URL** and click to expand.
 3. Enter the new URL (`http://host:port`, no trailing slash) and click **Save**.
    For the local mock server use `http://127.0.0.1:8765`.
@@ -230,7 +230,7 @@ first time a content script attempts to fetch it.
 
 The setting is synced through your Chrome profile, so it follows you across
 machines if Chrome sync is enabled. No part of the configuration is sent to
-SkillAudit or any third party.
+SkillPortrait or any third party.
 
 ---
 
@@ -302,7 +302,7 @@ browser_extension/
 ## Development
 
 There is no build step — the extension ships the source files directly. After
-editing any file, click the reload icon for the SkillAudit entry on
+editing any file, click the reload icon for the SkillPortrait entry on
 `chrome://extensions` to pick up the change. Content scripts re-inject on the
 next full page load (or `location.reload()`).
 
@@ -316,8 +316,8 @@ Contributions welcome via pull request against
 
 ## License
 
-Apache License 2.0; see [`../LICENSE`](../LICENSE). The companion SkillAudit
+Apache License 2.0; see [`../LICENSE`](../LICENSE). The companion SkillPortrait
 evaluation framework, the dataset, and the mock server are released under the
 same license. The bundled reference data shown in offline / preview mode is
 derived from `Example/<skill>/skill_report.json` and inherits the
-CDLA-Permissive-2.0 license of the SkillAudit dataset.
+CDLA-Permissive-2.0 license of the SkillPortrait dataset.

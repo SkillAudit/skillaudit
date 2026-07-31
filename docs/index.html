@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>SkillAudit — Should you install this skill?</title>
-  <meta name="description" content="Look up any AI agent skill before installing. SkillAudit reports whether a skill measurably improves task completion and whether it triggers exploits in a runtime sandbox — for 227 evaluated skills.">
+  <title>SkillPortrait — Should you install this skill?</title>
+  <meta name="description" content="Look up any AI agent skill before installing. SkillPortrait reports whether a skill measurably improves task completion and whether it triggers exploits in a runtime sandbox — for 226 evaluated skills.">
   <meta name="robots" content="index,follow">
-  <meta property="og:title" content="SkillAudit — Should you install this skill?">
+  <meta property="og:title" content="SkillPortrait — Should you install this skill?">
   <meta property="og:description" content="Look up any AI agent skill before installing.">
   <meta property="og:type" content="website">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -36,7 +36,7 @@
 </svg>
 
 <header class="topbar" role="banner">
-  <a class="brand" href="#top" aria-label="SkillAudit home">
+  <a class="brand" href="#top" aria-label="SkillPortrait home">
     <svg class="brand-mark" viewBox="0 0 100 100" aria-hidden="true">
       <polygon points="50,8  12,75  30,62  50,28" fill="url(#lens-face-bright)"/>
       <polygon points="50,8  88,75  70,62  50,28" fill="url(#lens-face-mid)"/>
@@ -51,7 +51,7 @@
     <a href="#how">How we score</a>
     <a href="#cite">Cite</a>
     <a href="artifacts/">Artifacts ↗</a>
-    <a class="cta" href="paper/SkillAudit.pdf" target="_blank" rel="noopener">Paper ↗</a>
+    <a class="cta" href="https://doi.org/10.5281/zenodo.21720913" target="_blank" rel="noopener">Dataset ↗</a>
   </nav>
 </header>
 
@@ -59,7 +59,7 @@
 
   <!-- ==================== HERO: search-first ==================== -->
   <section class="hero">
-    <span class="hero-status"><span class="dot"></span>Open-source release · arXiv preprint · 227 audited skills</span>
+    <span class="hero-status"><span class="dot"></span>Open-source release · public dataset · 226 evaluated skills</span>
 
     <h1>Should you install <em>this</em> skill?</h1>
 
@@ -93,7 +93,7 @@
     </div>
 
     <p class="hero-mini-stats">
-      <span><strong id="m-skills">227</strong> audited</span>
+      <span><strong id="m-skills">226</strong> evaluated</span>
       <span class="sep">·</span>
       <span><strong id="m-unsafe">41</strong> unsafe</span>
       <span class="sep">·</span>
@@ -134,7 +134,7 @@
     <div class="inbox-list" id="inbox-list" aria-busy="true"></div>
 
     <button type="button" class="inbox-show-all" id="inbox-show-all">
-      Show all 227 audits  ↓
+      Show all 226 evaluations  ↓
     </button>
   </section>
 
@@ -225,7 +225,7 @@
             </div>
             <div class="captured-panel">
               <div class="captured-panel-head">
-                <span>SkillAudit</span><span>↗ open</span>
+                <span>SkillPortrait</span><span>↗ open</span>
               </div>
               <div class="captured-panel-row"><span class="k">Effectiveness</span><span class="v good">+16.7 pp</span></div>
               <div class="captured-panel-row"><span class="k">Efficiency</span><span class="v">0.31</span></div>
@@ -251,11 +251,11 @@
         <div class="cite-row">
           <div class="cite-card">
             <h4>BibTeX</h4>
-<!-- FIXME: replace {SkillAudit Contributors} with the real author list and fill in the arXiv eprint ID after submission -->
-<pre id="bibtex">@misc{skillaudit2026,
-  title         = {SkillAudit: From Task-First Evaluation to
-                   Skill-Centered Assessment of Agent Skill Packages},
-  author        = {SkillAudit Contributors},
+<!-- Replace the anonymous author block after double-blind review. -->
+<pre id="bibtex">@misc{skillportrait2026,
+  title         = {SkillPortrait: From Fixed-Suite Benchmarking to
+                   Skill-Centered Assessment},
+  author        = {Anonymous Authors},
   year          = {2026},
   eprint        = {TBD},
   archivePrefix = {arXiv},
@@ -268,7 +268,7 @@
             <h4>Reproduce</h4>
             <p class="desc">
               Every audit's <code>skill_report.json</code> — judge items, finding rationale, paired
-              wi / wo numbers, severity weighting — bundled for all 227 evaluated skills.
+              wi / wo numbers, severity weighting — bundled for all 226 evaluated skills.
             </p>
             <a class="download-btn" href="data/benchmark.json" download>Download benchmark.json</a>
             <p class="meta">~4.5 MB · schema <code>skillaudit_benchmark_v1</code> · frozen 2026-05-04</p>
@@ -284,14 +284,14 @@
 <footer role="contentinfo">
   <div class="foot-grid">
     <div class="foot-brand">
-      <strong>Skill<em>Lens</em></strong>
-      <p>From Task-First Evaluation to Skill-Centered Assessment.<br>
-        Open-source release · arXiv preprint · Code on GitHub.</p>
+      <strong>Skill<em>Portrait</em></strong>
+      <p>From Fixed-Suite Benchmarking to Skill-Centered Assessment.<br>
+        Open-source release · Public data on Zenodo · Code on GitHub.</p>
     </div>
     <div>
       <h5>Paper</h5>
       <ul>
-        <li><a href="paper/SkillAudit.pdf">Paper PDF</a></li>
+        <li><a href="https://doi.org/10.5281/zenodo.21720913">Public dataset</a></li>
         <li><a href="#cite">Citation</a></li>
         <li><a href="#how">Method</a></li>
       </ul>
@@ -314,8 +314,8 @@
     </div>
   </div>
   <div class="foot-bot">
-    <span>// SkillAudit · open-source build · 2026</span>
-    <span>// 227 skills · frozen 2026-05-04 · open dataset for community audit</span>
+    <span>// SkillPortrait · open-source build · 2026</span>
+    <span>// 226 skills · public dataset v1.1.0 · community audit</span>
   </div>
 </footer>
 

@@ -1,7 +1,7 @@
 /* SkillAudit project page — runtime
  *
  * Loads:
- *   data/skills.json     (227 skills index)
+ *   data/skills.json     (226 skills index)
  *   data/stats.json      (totals + categories)
  *   data/inbox.json      (12 curated high-impact findings)
  *   data/skill/<name>.json  (lazy: full evidence per skill)
@@ -10,7 +10,7 @@
  *   Hero stats + lookup with autocomplete
  *   Lens view (replaces "verdict card") with 5 tabs:
  *     summary · evidence · compare wi/wo · findings · raw json
- *   Evidence Inbox (12 curated, expandable to 227)
+ *   Evidence Inbox (12 curated, expandable to 226)
  */
 (function () {
   "use strict";
@@ -678,7 +678,7 @@
     if (showAll) {
       showAll.addEventListener("click", function () {
         INBOX_STATE.expanded = !INBOX_STATE.expanded;
-        showAll.textContent = INBOX_STATE.expanded ? "Show curated 12  ↑" : "Show all 227 audits  ↓";
+        showAll.textContent = INBOX_STATE.expanded ? "Show curated 12  ↑" : "Show all 226 evaluations  ↓";
         renderInbox();
       });
     }
@@ -693,7 +693,7 @@
     list.removeAttribute("aria-busy");
 
     if (INBOX_STATE.expanded) {
-      // Render all 227 skills as compact inbox items, sorted by safety asc (riskiest first).
+      // Render all 226 skills as compact inbox items, sorted by safety asc (riskiest first).
       const all = INBOX_STATE.skillsFull.slice().sort(function (a, b) {
         return (a.safety_score || 100) - (b.safety_score || 100);
       });

@@ -1,5 +1,5 @@
-// SkillAudit — GitHub inline evaluation panel.
-// User-facing brand is SkillAudit; SkillAudit Engine is the underlying
+// SkillPortrait — GitHub inline evaluation panel.
+// User-facing brand is SkillPortrait; SkillPortrait Engine is the underlying
 // benchmark engine and is only referenced where the technical detail matters.
 //
 // URL handling
@@ -465,12 +465,12 @@ function showDetectionToast(route, displayName, onInspect) {
   toast.id = TOAST_ID;
   toast.className = "stb-toast";
   toast.setAttribute("role", "dialog");
-  toast.setAttribute("aria-label", "SkillAudit detected a skill");
+  toast.setAttribute("aria-label", "SkillPortrait detected a skill");
   toast.innerHTML = `
     <div class="stb-toast-head">
       <span class="stb-toast-badge" aria-hidden="true">S</span>
       <div class="stb-toast-text">
-        <div class="stb-toast-title">SkillAudit detected a skill</div>
+        <div class="stb-toast-title">SkillPortrait detected a skill</div>
         <div class="stb-toast-sub">${esc(displayName)}</div>
       </div>
       <button type="button" class="stb-toast-close" aria-label="Dismiss" data-stb-toast="dismiss">×</button>
@@ -505,8 +505,8 @@ function brandHeader(statusHtml) {
       <div class="stb-brand">
         <div class="stb-brand-badge" aria-hidden="true">S</div>
         <div class="stb-brand-text">
-          <span class="stb-brand-word">SkillAudit</span>
-          <span class="stb-brand-sub">powered by SkillAudit engine</span>
+          <span class="stb-brand-word">SkillPortrait</span>
+          <span class="stb-brand-sub">powered by SkillPortrait engine</span>
         </div>
       </div>
       <div class="stb-head-actions">
@@ -528,7 +528,7 @@ function previewBanner(kind = "paper") {
       <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
         <path d="M8 1.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13Zm.75 3.5v4.25a.75.75 0 0 1-1.5 0V5a.75.75 0 0 1 1.5 0Zm-.75 7.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"/>
       </svg>
-      <span><strong>Paper benchmark.</strong> Pinned from the SkillAudit overrides corpus — re-run with the local engine for fresh numbers.</span>
+      <span><strong>Paper benchmark.</strong> Pinned from the SkillPortrait overrides corpus — re-run with the local engine for fresh numbers.</span>
     </div>
   `;
 }
@@ -732,7 +732,7 @@ function renderStagesShell(route, displayName) {
     </div>
     <div class="stb-foot">
       <span class="stb-commit">${esc(owner)}/${esc(repo)}</span>
-      <span class="stb-pill" data-tone="warn">Running SkillAudit engine</span>
+      <span class="stb-pill" data-tone="warn">Running SkillPortrait engine</span>
     </div>
   `;
   attachActions(panel);
@@ -888,7 +888,7 @@ function renderEvaluation(evaluation, opts = {}) {
     <div class="stb-verdict" data-verdict="${verdict.verdict}" data-preview="${isOverride ? "true" : "false"}">
       <div class="stb-verdict-ring">${verdictRingSvg(verdict.score)}</div>
       <div class="stb-verdict-meta">
-        <div class="stb-verdict-eyebrow">Safety status · SkillAudit</div>
+        <div class="stb-verdict-eyebrow">Safety status · SkillPortrait</div>
         <div class="stb-verdict-title">${verdict.title}</div>
         <div class="stb-verdict-sub">${esc(evaluation.skillName || "—")} · S = ${Math.round(s.score ?? 0)} / 100</div>
       </div>
@@ -980,7 +980,7 @@ function renderEvaluation(evaluation, opts = {}) {
         <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M11.93 8.5a4.002 4.002 0 0 1-7.86 0H.75a.75.75 0 0 1 0-1.5h3.32a4.002 4.002 0 0 1 7.86 0h3.32a.75.75 0 0 1 0 1.5Zm-1.43-.75a2.5 2.5 0 1 0-5 0 2.5 2.5 0 0 0 5 0Z"/></svg>
         ${esc(commitShort)}
       </span>
-      <span class="stb-foot-meta">SkillAudit engine · ${esc(safetyDesc.footerCopy)}</span>
+      <span class="stb-foot-meta">SkillPortrait engine · ${esc(safetyDesc.footerCopy)}</span>
     </div>
 
     <div class="stb-details" id="stb-details" hidden>
@@ -1120,7 +1120,7 @@ function renderNotEvaluated(route, opts = {}) {
     <div class="stb-empty">
       <div class="stb-empty-title">Not in our research corpus yet</div>
       <div class="stb-empty-sub">
-        SkillAudit is in research preview — only skills from our published
+        SkillPortrait is in research preview — only skills from our published
         evaluation corpus show audit data. <strong>${esc(sub)}</strong> has
         not been evaluated yet, so no numbers are shown.
       </div>
@@ -1132,7 +1132,7 @@ function renderNotEvaluated(route, opts = {}) {
           Browse evaluated skills →
         </a>
         <a class="stb-empty-cta stb-empty-cta-alt"
-           href="https://doi.org/10.5281/zenodo.20253170"
+           href="https://doi.org/10.5281/zenodo.21720913"
            target="_blank" rel="noopener noreferrer">
           Dataset DOI
         </a>

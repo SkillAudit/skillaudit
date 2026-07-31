@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>SkillAudit — Artifacts</title>
-  <meta name="description" content="SkillAudit artifacts: open data, evaluation reports, and constructed task suites for 227 audited agent skills.">
+  <title>SkillPortrait — Artifacts</title>
+  <meta name="description" content="SkillPortrait artifacts: open data, evaluation reports, and constructed task suites for 226 evaluated agent skills.">
   <meta name="robots" content="index,follow">
   <meta name="referrer" content="no-referrer">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none';">
@@ -22,7 +22,7 @@
     <strong style="color:#F59E0B">// JavaScript required</strong> for the interactive skill explorer.
     The underlying data is plain JSON / CSV and is fully usable without the page:
     <ul>
-      <li><a href="data/index.json">data/index.json</a> — 227 skills × 8 runs index (~36 KB)</li>
+      <li><a href="data/index.json">data/index.json</a> — 226 skills across released runs (~36 KB)</li>
       <li><a href="data/stats.json">data/stats.json</a> — aggregate statistics</li>
       <li><a href="data/aggregate.csv">data/aggregate.csv</a> — long-format CSV (1812 rows × 28 cols)</li>
       <li><a href="data/checksums.txt">data/checksums.txt</a> — SHA-256 manifest for all 229 artifact files</li>
@@ -50,7 +50,7 @@
 </svg>
 
 <header class="topbar" role="banner">
-  <a class="brand" href="#top" aria-label="SkillAudit Artifacts home">
+  <a class="brand" href="#top" aria-label="SkillPortrait Artifacts home">
     <svg class="brand-mark" viewBox="0 0 100 100" aria-hidden="true">
       <polygon points="50,8  12,75  30,62  50,28" fill="url(#lens-face-bright)"/>
       <polygon points="50,8  88,75  70,62  50,28" fill="url(#lens-face-mid)"/>
@@ -75,12 +75,12 @@
 
   <!-- ==================== HERO ==================== -->
   <section class="hero">
-    <span class="hero-status"><span class="dot"></span>Open artifacts release · arXiv preprint · 227 audited skills</span>
+    <span class="hero-status"><span class="dot"></span>Open artifacts release · public dataset · 226 evaluated skills</span>
 
     <h1>Every report. Every <em>task</em>. Every run.</h1>
 
     <p class="hero-sub">
-      Browse the full evaluation surface that produced the SkillAudit paper: per-skill safety and
+      Browse the full SkillPortrait evaluation surface: per-skill safety and
       effectiveness results across eight harness × model runs, the constructed judge-item task
       suite, and (soon) replayable execution traces.
     </p>
@@ -97,7 +97,7 @@
                aria-expanded="false"
                aria-autocomplete="list"
                aria-controls="lookup-options"
-               aria-label="Search 227 skills">
+               aria-label="Search 226 skills">
         <button type="submit">Open →</button>
       </form>
       <div class="lookup-options" id="lookup-options" role="listbox" aria-label="Matching skills"></div>
@@ -149,7 +149,7 @@
       <h2>Evaluation surface across harnesses and models.</h2>
       <p class="lead">
         Each row is a single run: one harness driving one model along one axis (utility, security, or
-        both). Each column is the same set of 226–227 skills. Cells link to that run's per-skill
+        both). Each column is the same set of 226 skills. Cells link to that run's per-skill
         results.
       </p>
     </header>
@@ -218,11 +218,11 @@
         <div class="cite-row">
           <div class="cite-card">
             <h4>BibTeX</h4>
-<!-- FIXME: replace {SkillAudit Contributors} with the real author list and fill in the arXiv eprint ID after submission -->
-<pre id="bibtex">@misc{skillaudit2026,
-  title         = {SkillAudit: From Task-First Evaluation to
-                   Skill-Centered Assessment of Agent Skill Packages},
-  author        = {SkillAudit Contributors},
+<!-- Replace the anonymous author block after double-blind review. -->
+<pre id="bibtex">@misc{skillportrait2026,
+  title         = {SkillPortrait: From Fixed-Suite Benchmarking to
+                   Skill-Centered Assessment},
+  author        = {Anonymous Authors},
   year          = {2026},
   eprint        = {TBD},
   archivePrefix = {arXiv},
@@ -258,9 +258,9 @@
 <footer role="contentinfo">
   <div class="foot-grid">
     <div class="foot-brand">
-      <strong>Skill<em>Lens</em></strong> <span style="color:var(--fg-4)">/ artifacts</span>
-      <p>From Task-First Evaluation to Skill-Centered Assessment.<br>
-        Open-source release · arXiv preprint · Code on GitHub.</p>
+      <strong>Skill<em>Portrait</em></strong> <span style="color:var(--fg-4)">/ artifacts</span>
+      <p>From Fixed-Suite Benchmarking to Skill-Centered Assessment.<br>
+        Open-source release · Public data on Zenodo · Code on GitHub.</p>
     </div>
     <div>
       <h5>Paper</h5>
@@ -290,8 +290,8 @@
     </div>
   </div>
   <div class="foot-bot">
-    <span>// SkillAudit artifacts · open-source build · 2026</span>
-    <span>// 227 skills · 8 runs · frozen 2026-05-07</span>
+    <span>// SkillPortrait artifacts · open-source build · 2026</span>
+    <span>// 226 skills · public dataset v1.1.0 · 2026</span>
   </div>
 </footer>
 

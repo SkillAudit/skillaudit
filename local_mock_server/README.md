@@ -1,16 +1,16 @@
-# SkillAudit — Local Mock Server
+# SkillPortrait — Local Mock Server
 
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache--2.0-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 [![Python](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/downloads/)
 
 A self-contained Python HTTP server that serves the data the
-[SkillAudit browser extension](../browser_extension/README.md) consumes during a
-demo or against a local SkillAudit corpus. It implements the same `/lookup`
-contract a hosted SkillAudit deployment would, so you can develop and demo the
+[SkillPortrait browser extension](../browser_extension/README.md) consumes during a
+demo or against a local SkillPortrait corpus. It implements the same `/lookup`
+contract a hosted SkillPortrait deployment would, so you can develop and demo the
 extension end-to-end without standing up the full evaluation pipeline.
 
 > The mock server is what the extension talks to over `http://127.0.0.1:8765`
-> by default. Swap in your own SkillAudit backend by changing the URL in the
+> by default. Swap in your own SkillPortrait backend by changing the URL in the
 > extension popup — the API contract is identical.
 
 ---
@@ -52,7 +52,7 @@ The server has no third-party dependencies — only the Python standard library
                  endpoints. Empty (default) accepts any loopback request.
 ```
 
-Pointing the server at a full SkillAudit corpus is a matter of supplying
+Pointing the server at a full SkillPortrait corpus is a matter of supplying
 `--examples-dir /path/to/Example/` — the adapter discovers any
 `<skill>/skill_report.json` underneath and indexes it on startup.
 
@@ -65,7 +65,7 @@ Pointing the server at a full SkillAudit corpus is a matter of supplying
 | Method | Path | Purpose |
 |--------|------|---------|
 | `GET`  | `/health` | Liveness probe used by the extension popup. |
-| `GET`  | `/lookup?owner=<o>&repo=<r>` | Primary endpoint the extension calls. Returns a cached SkillAudit report (utility, safety, cost) or `{"ok": false, "reason": "..."}`. |
+| `GET`  | `/lookup?owner=<o>&repo=<r>` | Primary endpoint the extension calls. Returns a cached SkillPortrait report (utility, safety, cost) or `{"ok": false, "reason": "..."}`. |
 | `GET`  | `/api/examples/summary` | Bulk summary used by the `/examples` viewer. |
 | `GET`  | `/api/scanner/skills` | Static-scan finding rollup by skill. |
 | `GET`  | `/api/scanner/findings` | Static-scan findings detail. |
@@ -187,5 +187,5 @@ Run this in CI before publishing a new `overrides.json`.
 Apache License 2.0; see [`../LICENSE`](../LICENSE). The baked
 `docs/artifacts/api/` payloads and the per-skill reports under
 `docs/artifacts/data/` are released under CDLA-Permissive-2.0 as part of
-the SkillAudit dataset
-([Zenodo `10.5281/zenodo.20253170`](https://doi.org/10.5281/zenodo.20253170)).
+the SkillPortrait dataset
+([Zenodo `10.5281/zenodo.21720913`](https://doi.org/10.5281/zenodo.21720913)).

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# bootstrap.sh — set up a SkillAudit evaluation environment from a clean clone.
+# bootstrap.sh — set up a SkillPortrait evaluation environment from a clean clone.
 #
 # What it does:
 #   1. Verifies Python >= 3.12 and the `uv` package manager are available.
@@ -36,7 +36,7 @@ py_version="$(python3 -c 'import sys; print("%d.%d" % sys.version_info[:2])')"
 py_major="${py_version%.*}"
 py_minor="${py_version#*.}"
 if [ "$py_major" -lt 3 ] || { [ "$py_major" -eq 3 ] && [ "$py_minor" -lt 12 ]; }; then
-    die "Python $py_version detected; SkillAudit requires >= 3.12."
+    die "Python $py_version detected; SkillPortrait requires >= 3.12."
 fi
 log "python3 = $py_version OK"
 
